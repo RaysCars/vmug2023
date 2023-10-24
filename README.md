@@ -1,5 +1,17 @@
 # Advanced Techniques to Supercharge PowerShell PowerCLI Automation (VMug 2023)   
 
+## Play with me LIVE DEMO: 1 to 100
+
+
+```powershell   
+
+Measure-Command { 1..1000 | ForEach-Object -ThrottleLimit 500 -Parallel { sleep 1 ; $_ }  }
+
+```
+
+Try Tweeking the -ThrottleLimit integer and Sleep integer to see how it affects the total time
+
+
 
 ## Count Virtual Machines *Fast*
 ```powershell   
@@ -44,13 +56,3 @@ Get-View -ViewType VirtualMachine -Property Snapshot |
 
 
 
-## Play with me LIVE DEMO: 1 to 100
-
-
-```powershell   
-
-Measure-Command { 1..1000 | ForEach-Object -ThrottleLimit 500 -Parallel { sleep 1 ; $_ }  }
-
-```
-
-Try Tweeking the -ThrottleLimit integer and Sleep integer to see how it affects the total time
